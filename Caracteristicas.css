@@ -1,0 +1,163 @@
+:root {
+    --accent: #00ff9d;
+    --bg: #0d0d0d;
+    --card: #1a1a1a;
+    --accent-strong: #00ff80; /* Verde lima neón, parecido pero distinto */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background: var(--bg);
+    color: #e0e0e0;
+    line-height: 1.7;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 15px 0;
+    border-bottom: 1px solid #222;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6em;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.logo span { color: white; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: #000;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+}
+
+header {
+    background: linear-gradient(135deg, #001a0d, #00331a);
+    text-align: center;
+    padding: 140px 20px 80px;
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.8em;
+    color: white;
+    text-shadow: 0 0 25px rgba(0,255,157,0.6);
+}
+
+header p {
+    font-size: 1.3em;
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+section {
+    background: var(--card);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent);
+    margin: 25px 0 15px;
+    font-size: 2em;
+    position: relative;
+}
+
+h3 {
+    font-size: 1.7em;
+}
+
+/* EFECTO SUBRAYADO */
+h2::after, h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+    box-shadow: 0 0 12px var(--accent);
+}
+
+/* AQUÍ ESTÁ EL CAMBIO: strong en títulos */
+h2 strong, h3 strong {
+    color: var(--accent-strong);
+    text-shadow: 0 0 15px rgba(0, 255, 128, 0.6);
+    font-weight: 700;
+}
+
+/* Opcional: strong en párrafos normales */
+p strong {
+    color: var(--accent-strong);
+    font-weight: 600;
+}
+
+ul {
+    margin: 16px 0;
+    padding-left: 24px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li::marker {
+    color: var(--accent);
+}
+
+footer {
+    text-align: center;
+    padding: 35px;
+    background: #000;
+    color: #666;
+    font-size: 0.9em;
+    border-top: 1px solid #222;
+}
+
+footer i {
+    color: var(--accent);
+}
